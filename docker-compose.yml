@@ -1,0 +1,35 @@
+version: '2.1'
+
+services:
+  nginx:
+    container_name: jinhak-nginx-node
+    image: jinhak-nginx:DSS2021
+    build: ./nginx
+    links:
+      - app-1:app-1
+      - app-2:app-2
+      - app-3:app-3
+    ports:
+      - 2021:3000
+    depends_on:
+      - app-1
+      - app-2
+      - app-3
+
+  app-1:
+    container_name: jinhak-node-DSS2021-1
+    image: jinhak-node:DSS2021
+    ports:
+      - 3001:3000
+
+  app-2:
+    container_name: jinhak-node-DSS2021-2
+    image: jinhak-node:DSS2021
+    ports:
+      - 3002:3000
+
+  app-3:
+    container_name: jinhak-node-DSS2021-3
+    image: jinhak-node:DSS2021
+    ports:
+      - 3003:3000

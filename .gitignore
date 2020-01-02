@@ -1,0 +1,11 @@
+# dependencies
+/DSS2021/node_modules
+
+/nginx/*.*
+/nginx/contrib
+/nginx/docs
+/nginx/html
+/nginx/logs
+/nginx/temp
+/nginx/conf/*
+!/nginx/conf/nginx.conf
